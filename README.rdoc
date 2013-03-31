@@ -1,0 +1,21 @@
+rails new locations
+
+use gem geocoder
+
+generate controller locations which creates a number of things including      views/locations
+
+generate model Location  location:string latitude:string longitude:string  - this creates the model with attr accessible location, latitude, longitude and creates
+migration for our database
+
+rm public/index.html
+-forgot to create index shortcut-make an index.html.erb in views/locations contents include a simple form_for(Location.new)
+
+set up config/routes -   resources :location  root :to => 'locations#index'
+
+back to locations_controller - include method create for Location.new
+
+add to model Locations - geocoded_by :location after_validation :geocode, if => :location_changed?
+
+rake db:migrate to seal the deal
+
+check browser, enter location, database will have lat/long
