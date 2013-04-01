@@ -1,0 +1,13 @@
+<h1>You just added that location to our database</h1>
+<h1>YAY!</h1>
+<h2>Here is your reward:</h2>
+<%= form_for(@location) do |f| %>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+<% end %>
